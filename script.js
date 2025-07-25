@@ -52,3 +52,22 @@ function erase() {
 document.addEventListener("DOMContentLoaded", () => {
     if (textArray.length) type();
 });
+// Simple Chatbot Interaction (Mock)
+const chatInput = document.getElementById('chat-input');
+const chatBody = document.getElementById('chat-body');
+
+chatInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+        const userMessage = document.createElement('p');
+        userMessage.textContent = "You: " + chatInput.value;
+        chatBody.appendChild(userMessage);
+
+        // AI's reply (placeholder)
+        const botMessage = document.createElement('p');
+        botMessage.textContent = "AI: I’m still learning! I'll help you connect with Muchemi.";
+        chatBody.appendChild(botMessage);
+
+        chatInput.value = '';
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+});
