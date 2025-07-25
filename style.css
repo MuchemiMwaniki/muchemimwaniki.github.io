@@ -1,28 +1,50 @@
-
 :root {
-    --primary: #1E3A8A;
-    --accent: #3B82F6;
-    --secondary: #6B7280;
-    --background: #F3F4F6;
-    --highlight: #06B6D4;
+    --primary: #1E3A8A; /* Deep Royal Blue */
+    --accent: #3B82F6;  /* Bright Sky Blue */
+    --secondary: #6B7280; /* Warm Gray */
+    --background: #F3F4F6; /* Light Gray */
+    --highlight: #06B6D4; /* Teal Cyan */
 }
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
     background: var(--background);
     color: var(--secondary);
 }
 
-header {
-    background: var(--primary);
-    color: #fff;
-    padding: 2rem 0;
+/* Hero Section */
+.hero {
+    background: url('assets/hero.jpg') center/cover no-repeat;
     text-align: center;
+    padding: 4rem 2rem;
+    color: white;
+    position: relative;
 }
 
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 58, 138, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Navigation */
 nav {
     background: var(--accent);
     display: flex;
@@ -42,6 +64,7 @@ nav a:hover {
     color: var(--highlight);
 }
 
+/* Sections */
 section {
     padding: 2rem;
     background: white;
@@ -55,6 +78,7 @@ h2 {
     color: var(--primary);
 }
 
+/* WhatsApp Float */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
