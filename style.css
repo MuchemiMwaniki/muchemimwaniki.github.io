@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #0a0a0a;
     color: #f5f5f5;
     line-height: 1.6;
@@ -9,18 +9,29 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom right, #000, #333), url('hero.png') center/cover no-repeat;
-    text-align: center;
-    padding: 6rem 2rem;
-    color: #f5f5f5;
+    background: url('hero.png') center/cover no-repeat;
+    height: 70vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.hero h1 {
+.hero .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+.hero-content h1 {
     font-size: 2.5rem;
     color: gold;
     margin-bottom: 0.5rem;
 }
-.hero p {
+.hero-content p {
     font-size: 1.2rem;
 }
 .cta-button {
@@ -38,33 +49,39 @@ body {
 }
 
 /* Navigation */
-nav {
+.navbar {
     background: #000;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
 }
-nav ul {
+.navbar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-nav ul li {
+.navbar ul li {
     display: inline;
     margin: 0 1rem;
 }
-nav ul li a {
+.navbar ul li a {
     text-decoration: none;
     color: gold;
     font-weight: bold;
 }
 
+/* Container for Content */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
 /* Cards */
 .card {
     background: #1c1c1c;
-    margin: 1rem auto;
-    padding: 1rem;
+    margin: 1rem 0;
+    padding: 1.5rem;
     border-radius: 8px;
-    max-width: 800px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 .card h2 {
@@ -87,4 +104,14 @@ footer a {
 }
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
 }
