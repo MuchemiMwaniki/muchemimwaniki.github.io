@@ -1,14 +1,3 @@
-// Fade-in effect for cards
-document.addEventListener("scroll", function () {
-    const cards = document.querySelectorAll(".card");
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            card.classList.add("visible");
-        }
-    });
-});
-
 // Scroll-to-top button
 const scrollBtn = document.getElementById("scrollTopBtn");
 window.onscroll = function() {
@@ -21,3 +10,14 @@ window.onscroll = function() {
 scrollBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+// Fade-in cards on scroll
+document.addEventListener("scroll", function () {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            card.classList.add("visible");
+        }
+    });
+});
