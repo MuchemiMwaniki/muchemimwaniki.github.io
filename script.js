@@ -71,3 +71,56 @@ chatInput.addEventListener('keypress', function(e) {
         chatBody.scrollTop = chatBody.scrollHeight;
     }
 });
+// Chatbot Elements
+const chatBubble = document.getElementById('chat-bubble');
+const chatWindow = document.getElementById('chat-window');
+const chatClose = document.querySelector('.chat-close');
+const chatInput = document.getElementById('chat-input');
+const chatBody = document.getElementById('chat-body');
+
+// Show Chat Window
+chatBubble.addEventListener('click', () => {
+    chatWindow.style.display = 'flex';
+    chatBubble.style.display = 'none';
+});
+
+// Close Chat Window
+chatClose.addEventListener('click', () => {
+    chatWindow.style.display = 'none';
+    chatBubble.style.display = 'flex';
+});
+
+// Automated Response Logic
+const responses = {
+    "hello": "Hello there! How can I help you today?",
+    "services": "I offer AI prompt engineering, chatbot creation, workflow automation, and AI-powered websites.",
+    "contact": "You can reach Muchemi at +254 773 053 465 or muchemimwaniki@gmail.com.",
+    "ai": "AI stands for Artificial Intelligence, and I specialize in making it work for your business!"
+};
+
+chatInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+        const userText = chatInput.value.trim();
+        appendMessage('You', userText);
+
+        // Find response
+        const lowerCaseMsg = userText.toLowerCase();
+        let reply = "I'm not sure how to respond to that, but Muchemi will assist you soon!";
+        for (let key in responses) {
+            if (lowerCaseMsg.includes(key)) {
+                reply = responses[key];
+                break;
+            }
+        }
+        appendMessage('AI', reply);
+
+        chatInput.value = '';
+    }
+});
+
+function appendMessage(sender, text) {
+    const msg = document.createElement('p');
+    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    chatBody.appendChild(msg);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
