@@ -1,16 +1,16 @@
-/* General Styles */
+/* Fonts and General Styles */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #0a0a0a;
     color: #f5f5f5;
     line-height: 1.6;
     scroll-behavior: smooth;
 }
 
-/* Hero Section */
+/* Hero Section with Parallax */
 .hero {
-    background: url('hero.png') center/cover no-repeat;
+    background: url('hero.png') center/cover no-repeat fixed;
     height: 70vh;
     position: relative;
     display: flex;
@@ -28,30 +28,32 @@ body {
     padding: 1rem;
 }
 .hero-content h1 {
+    font-family: 'Baloo 2', cursive;
     font-size: 2.8rem;
     color: gold;
     margin-bottom: 0.5rem;
     text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc107;
-    animation: fadeSlideDown 1s ease-in-out;
 }
 .hero-content p {
     font-size: 1.2rem;
-    animation: fadeSlideUp 1s ease-in-out;
 }
+
+/* Glowing Gradient Buttons */
 .cta-button {
     display: inline-block;
-    background: gold;
+    background: linear-gradient(45deg, gold, orange);
     color: #000;
     padding: 0.75rem 1.5rem;
     margin-top: 1rem;
-    border-radius: 25px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px gold;
 }
 .cta-button:hover {
-    background: #e6c200;
     transform: scale(1.05);
+    box-shadow: 0 0 20px orange, 0 0 30px gold;
 }
 
 /* Navigation */
@@ -86,7 +88,7 @@ body {
     padding: 0 1rem;
 }
 
-/* Cards */
+/* Cards with Scroll Animation */
 .card {
     background: #1c1c1c;
     margin: 1rem 0;
@@ -108,7 +110,7 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Floating WhatsApp Button - Modern Look */
+/* Floating WhatsApp Button */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -170,15 +172,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Animations */
-@keyframes fadeSlideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* Keyframes for Glow */
 @keyframes pulseGlow {
     from { box-shadow: 0 0 10px rgba(37, 211, 102, 0.6); }
     to { box-shadow: 0 0 20px rgba(37, 211, 102, 1); }
