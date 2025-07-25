@@ -222,3 +222,70 @@ footer a:hover {
     outline: none;
     width: 100%;
 }
+/* Chat Bubble */
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: gold;
+    color: black;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+.chat-bubble:hover {
+    transform: scale(1.1);
+}
+
+/* Chat Window */
+.chat-window {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+}
+.chat-header {
+    background: linear-gradient(45deg, gold, orange);
+    padding: 10px;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    color: white;
+}
+#chat-input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    outline: none;
+}
+.chat-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: black;
+}
