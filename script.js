@@ -11,7 +11,7 @@ scrollBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// Fade-in cards on scroll
+// Scroll-trigger animations for cards
 document.addEventListener("scroll", function () {
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
@@ -20,4 +20,35 @@ document.addEventListener("scroll", function () {
             card.classList.add("visible");
         }
     });
+});
+
+// Typing Effect for Hero Text
+const typingElement = document.querySelector(".typing-text");
+const textArray = JSON.parse(typingElement.getAttribute("data-text"));
+let textIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (charIndex < textArray[textIndex].length) {
+        typingElement.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+    } else {
+        setTimeout(erase, 2000);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        typingElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+    } else {
+        textIndex = (textIndex + 1) % textArray.length;
+        setTimeout(type, 500);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (textArray.length) type();
 });
