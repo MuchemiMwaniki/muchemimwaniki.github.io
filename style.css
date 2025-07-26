@@ -1,261 +1,170 @@
-/* ===== Base Styles ===== */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #1a1a1a;
+  --card-bg: #ffffff;
+  --accent-color: #007acc;
+}
+
+body.dark-mode {
+  --bg-color: #1f1f1f;
+  --text-color: #e0e0e0;
+  --card-bg: #2c2c2c;
+  --accent-color: #66ccff;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #1e1e2f;
-  color: #f0f0f0;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
 
-/* ===== Containers & Cards ===== */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 2rem;
-}
-
-.card {
-  background-color: #2a2a3d;
-  color: #e6e6e6;
-  padding: 1.5rem;
-  margin: 1rem auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* ===== Navbar ===== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1b1b2b;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar ul li a {
-  color: #ddd;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.navbar ul li a:hover {
-  color: gold;
-}
-
-#theme-toggle {
-  background: none;
-  border: none;
-  color: #ffd700;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-/* ===== Hero Section ===== */
 .hero {
-  background-image: url('header-bg.jpg');
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(to bottom, #007acc, #005f99);
   color: white;
-  height: 60vh;
-  position: relative;
-}
-
-.hero .overlay {
-  background: rgba(0, 0, 0, 0.6);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 5rem 1rem;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
+.typing-text {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .cta-button {
-  background: #ffd700;
-  color: #000;
-  padding: 0.7rem 1.5rem;
-  border-radius: 25px;
+  background: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 1rem;
-  transition: background-color 0.3s;
 }
 
-.cta-button:hover {
-  background-color: #e6c200;
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: #1b1b2b;
-  color: #ccc;
+.navbar {
+  background: var(--card-bg);
   padding: 1rem;
   text-align: center;
 }
 
-/* ===== WhatsApp Floating Button ===== */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--card-bg);
+}
+
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 9999;
+  height: 60px;
+  width: 60px;
+  z-index: 1000;
 }
 
 .whatsapp-float img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: white;
-  padding: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
-/* ===== Light Mode Styles ===== */
-body.light-mode {
-  background-color: #f4f4f4;
-  color: #222;
-}
-
-body.light-mode .card {
-  background-color: #ffffff;
-  color: #222;
-}
-
-body.light-mode .navbar,
-body.light-mode footer {
-  background-color: #ffffff;
-  color: #000;
-}
-
-body.light-mode .navbar ul li a {
-  color: #333;
-}
-
-body.light-mode .navbar ul li a:hover {
-  color: #0066cc;
-}
-
-body.light-mode .cta-button {
-  background-color: #0066cc;
-  color: white;
-}
-
-body.light-mode .cta-button:hover {
-  background-color: #004c99;
-}
-
-/* ===== Scroll-to-Top Button ===== */
-#scrollTopBtn {
-  display: none;
+#theme-toggle {
   position: fixed;
-  bottom: 70px;
-  right: 20px;
-  font-size: 20px;
-  padding: 10px;
+  top: 10px;
+  right: 10px;
+  background: var(--card-bg);
   border: none;
-  background-color: #ffd700;
-  color: #000;
-  cursor: pointer;
   border-radius: 50%;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  cursor: pointer;
   z-index: 999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-/* ===== Chat Bubble & Chat Window ===== */
 .chat-bubble {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  font-size: 24px;
-  background: #25d366;
-  color: white;
-  padding: 10px;
-  border-radius: 50%;
+  font-size: 1.5rem;
   cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
 
 .chat-window {
-  display: none;
   position: fixed;
-  bottom: 140px;
+  bottom: 90px;
   right: 20px;
   width: 300px;
-  background: #fff;
+  height: 400px;
+  background: var(--card-bg);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  overflow: hidden;
-  z-index: 10000;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .chat-header {
-  background: #25d366;
+  background: var(--accent-color);
+  padding: 0.5rem;
   color: white;
-  padding: 10px;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.chat-close {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
 }
 
 .chat-body {
-  height: 200px;
-  padding: 10px;
+  flex: 1;
+  padding: 1rem;
   overflow-y: auto;
-  background: #f9f9f9;
 }
 
 #chat-input {
-  width: 100%;
-  padding: 10px;
+  padding: 0.5rem;
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .chat-window {
-    width: 90%;
-    right: 5%;
-  }
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: none;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
