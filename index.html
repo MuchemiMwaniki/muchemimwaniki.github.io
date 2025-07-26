@@ -9,9 +9,6 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
-  <!-- Toggle Theme Button -->
-  <button id="themeToggle" class="theme-toggle" title="Switch Theme">🌞</button>
-
   <!-- HERO SECTION -->
   <header class="hero">
     <div class="overlay">
@@ -31,6 +28,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button id="theme-toggle">🌙</button>
   </nav>
 
   <!-- MAIN CONTENT -->
@@ -68,7 +66,7 @@
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/254773053465" class="whatsapp-float" target="_blank">
-    <img src="whatsapp-icon.png" alt="WhatsApp" />
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
   </a>
 
   <!-- Chatbot Bubble -->
@@ -87,30 +85,15 @@
   <!-- Scroll-to-Top Button -->
   <button id="scrollTopBtn">&#8679;</button>
 
-  <!-- JavaScript -->
-  <script src="script.js"></script>
-
-  <!-- Theme Toggle Script -->
+  <!-- SCRIPT -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggleBtn = document.getElementById("themeToggle");
-      const body = document.body;
-
-      // Load saved theme
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "light") {
-        body.classList.add("light-mode");
-        toggleBtn.textContent = "🌙";
-      }
-
-      // On toggle click
-      toggleBtn.addEventListener("click", () => {
-        body.classList.toggle("light-mode");
-        const isLight = body.classList.contains("light-mode");
-        toggleBtn.textContent = isLight ? "🌙" : "🌞";
-        localStorage.setItem("theme", isLight ? "light" : "dark");
-      });
+    // Light/Dark Theme Toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      toggleBtn.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
     });
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
