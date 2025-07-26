@@ -106,3 +106,21 @@ function appendMessage(sender, text) {
     chatBody.appendChild(msg);
     chatBody.scrollTop = chatBody.scrollHeight;
 }
+
+// ===== Light/Dark Theme Toggle =====
+const toggleBtn = document.createElement('button');
+toggleBtn.textContent = "🌓";
+toggleBtn.id = "themeToggle";
+document.body.appendChild(toggleBtn);
+
+toggleBtn.onclick = () => {
+    document.body.classList.toggle('light-theme');
+    document.body.classList.toggle('dark-theme');
+    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+};
+
+// Apply saved theme
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.classList.add(savedTheme === 'dark' ? 'dark-theme' : 'light-theme');
+});
