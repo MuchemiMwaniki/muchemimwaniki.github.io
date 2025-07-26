@@ -130,3 +130,24 @@ themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 });
+// Theme toggle
+const toggleButton = document.getElementById('theme-toggle');
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+});
+
+// Scroll button
+const scrollBtn = document.getElementById('scrollTopBtn');
+window.onscroll = () => {
+  scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+};
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Chat toggle
+function toggleChat() {
+  const chat = document.getElementById('chat-window');
+  chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
+}
