@@ -1,325 +1,99 @@
-/* Fonts and General Styles */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #0a0a0a;
-  color: #f5f5f5;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muchemi Mwaniki - AI Prompt Engineering & Smart Automation for Businesses" />
+  <title>Muchemi Mwaniki - AI Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="overlay">
+      <div class="hero-content">
+        <h1><span class="typing-text" data-text='["Muchemi Mwaniki", "AI Solutions Expert", "Prompt Engineering Specialist"]'></span></h1>
+        <p>AI Prompt Engineering & Smart Automation for Businesses</p>
+        <a href="#contact" class="cta-button">Contact Me</a>
+      </div>
+    </div>
+  </header>
 
-/* Hero Section with Parallax */
-.hero {
-  background: url('hero.png') center/cover no-repeat fixed;
-  height: 70vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-}
-.hero-content h1 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 2.8rem;
-  color: gold;
-  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc107;
-}
-.hero-content p {
-  font-size: 1.2rem;
-}
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle">🌙</button>
+  </nav>
 
-/* Glowing Gradient Buttons */
-.cta-button {
-  display: inline-block;
-  background: linear-gradient(45deg, gold, orange);
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  margin-top: 1rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 10px gold;
-}
-.cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px orange, 0 0 30px gold;
-}
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>
+        I’m Muchemi Mwaniki, a tech enthusiast and AI solutions consultant based in Kenya.
+        I help businesses and individuals harness <strong>AI, prompt engineering, and automation</strong>
+        to save time, reduce costs, and unlock growth opportunities.
+      </p>
+    </section>
 
-/* Navigation */
-.navbar {
-  background: #000;
-  text-align: center;
-  padding: 0.5rem 0;
-}
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.navbar ul li {
-  display: inline;
-  margin: 0 1rem;
-}
-.navbar ul li a {
-  text-decoration: none;
-  color: gold;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-.navbar ul li a:hover {
-  color: #fff;
-}
+    <section id="services" class="card">
+      <h2>Services</h2>
+      <ul>
+        <li><strong>Prompt Engineering & AI Consulting:</strong> Crafting high-quality prompts for better AI results.</li>
+        <li><strong>Workflow Automation:</strong> Automating business processes with Zapier, n8n, and AI integrations.</li>
+        <li><strong>Custom Chatbots:</strong> Smart AI assistants for websites and businesses.</li>
+        <li><strong>AI-Powered Websites:</strong> Modern, SEO-friendly websites with AI features built-in.</li>
+      </ul>
+    </section>
 
-/* Container for Content */
-.container {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <p>Coming soon: Case studies of businesses I’ve transformed with AI.</p>
+    </section>
+  </main>
 
-/* Cards with Scroll Animation */
-.card {
-  background: #1c1c1c;
-  margin: 1rem 0;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.card h2 {
-  color: gold;
-  border-bottom: 2px solid gold;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6);
-}
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>Contact me via WhatsApp: <a href="https://wa.me/254773053465" target="_blank">+254 773 053 465</a></p>
+    <p>Email: <a href="mailto:muchemimwaniki@gmail.com">muchemimwaniki@gmail.com</a></p>
+  </footer>
 
-/* Floating WhatsApp Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(145deg, #25d366, #1ebe57);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: pulseGlow 2s infinite alternate;
-  z-index: 999;
-}
-.whatsapp-float img {
-  width: 32px;
-  height: 32px;
-}
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-}
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/254773053465" class="whatsapp-float" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+  </a>
 
-/* Scroll-to-top button */
-#scrollTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  background: gold;
-  color: black;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  transition: 0.3s;
-  z-index: 100;
-}
-#scrollTopBtn:hover {
-  background: #e6c200;
-}
+  <!-- Chatbot Bubble -->
+  <div class="chat-bubble" id="chat-bubble">💬</div>
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #000;
-  color: #fff;
-}
-footer a {
-  color: gold;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
+  <!-- Chatbot Window -->
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      Chat with AI
+      <button class="chat-close">&times;</button>
+    </div>
+    <div class="chat-body" id="chat-body"></div>
+    <input type="text" id="chat-input" placeholder="Type your message..." />
+  </div>
 
-/* Chat Bubble */
-.chat-bubble {
-  position: fixed;
-  bottom: 20px;
-  left: 20px; /* Moved to left to avoid overlapping */
-  background: gold;
-  color: black;
-  font-size: 1.5rem;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-.chat-bubble:hover {
-  transform: scale(1.1);
-}
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn">&#8679;</button>
 
-/* Chat Window */
-.chat-window {
-  position: fixed;
-  bottom: 80px;
-  left: 20px; /* Positioned to left */
-  width: 300px;
-  height: 400px;
-  background: #1c1c1c;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  display: none;
-  flex-direction: column;
-  z-index: 1001;
-}
-.chat-header {
-  background: linear-gradient(45deg, gold, orange);
-  padding: 10px;
-  font-weight: bold;
-  color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px 10px 0 0;
-}
-.chat-body {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  color: white;
-}
-.chat-message {
-  margin: 5px 0;
-  padding: 8px 10px;
-  border-radius: 8px;
-}
-.chat-message.user {
-  background: #444;
-  align-self: flex-end;
-}
-.chat-message.bot {
-  background: #333;
-  align-self: flex-start;
-}
-#chat-input {
-  border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 0 0 10px 10px;
-  outline: none;
-}
-.chat-close {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: black;
-}
-
-/* Keyframes */
-@keyframes pulseGlow {
-  from { box-shadow: 0 0 10px rgba(37, 211, 102, 0.6); }
-  to { box-shadow: 0 0 20px rgba(37, 211, 102, 1); }
-}
-
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
-/* === LIGHT MODE OVERRIDES === */
-body.light-mode {
-  background-color: #ffffff;
-  color: #111111;
-}
-body.light-mode .card {
-  background: #f5f5f5;
-  color: #111;
-}
-body.light-mode .chat-window {
-  background: #ffffff;
-  color: #000;
-}
-body.light-mode footer,
-body.light-mode .navbar {
-  background: #eaeaea;
-  color: #111;
-}
-body.light-mode .navbar ul li a {
-  color: #333;
-}
-body.light-mode .navbar ul li a:hover {
-  color: #000;
-}
-body.light-mode .hero .overlay {
-  background: rgba(255, 255, 255, 0.3);
-}
-body.light-mode .cta-button {
-  color: #000;
-}
-body.light-mode .card h2 {
-  color: #d4af37;
-}
-
-/* === THEME TOGGLE BUTTON === */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: gold;
-  color: black;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  z-index: 10000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease;
-}
-.theme-toggle:hover {
-  background: orange;
-}
+  <!-- SCRIPT -->
+  <script>
+    // Light/Dark Theme Toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      toggleBtn.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
