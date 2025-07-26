@@ -21,10 +21,18 @@ body {
 }
 
 .hero {
-  background: linear-gradient(to bottom, #007acc, #005f99);
-  color: white;
+  background-image: url('images/hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
   text-align: center;
-  padding: 5rem 1rem;
+}
+
 }
 
 .typing-text {
