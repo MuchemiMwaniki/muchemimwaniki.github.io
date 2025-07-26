@@ -3,92 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muchemi Mwaniki | Prompt Engineering & AI Specialist</title>
+  <title>Muchemi Mwaniki | AI Specialist</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <script defer src="script.js"></script>
 </head>
-<body>
-  <nav>
-    <div class="logo"><a href="#">Muchemi Mwaniki</a></div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <button id="theme-toggle">Toggle Theme</button>
-    </div>
-  </nav>
+<body class="light-theme">
+  <!-- Header -->
+  <header>
+    <h1>Muchemi Mwaniki</h1>
+    <button id="themeToggle">Toggle Theme</button>
+  </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Prompt Engineering & AI Solutions</h1>
-    <p>Transforming Ideas into Smart Automations</p>
+    <h2>AI Prompt Engineering | Automation | Chatbots</h2>
+    <p class="typing-text" data-text='["Let\'s build smart workflows.", "Automate your business.", "Get AI-powered solutions."]'></p>
   </section>
 
+  <!-- About Section -->
   <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>I’m Muchemi Mwaniki, a specialist in prompt engineering and AI-driven automation. I help businesses harness the power of AI to boost efficiency, creativity, and results.</p>
-    </div>
+    <h3>About Me</h3>
+    <p>I'm a prompt engineering and AI automation specialist passionate about using AI to transform business workflows.</p>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="card">
-      <h3>ChatGPT Bot Builder</h3>
-      <p>Created a no-code solution for generating ChatGPT-based assistants using structured prompts.</p>
-    </div>
-    <div class="card">
-      <h3>AI Automation for SMEs</h3>
-      <p>Helped local businesses automate accounting and customer support using custom GPT workflows.</p>
-    </div>
+    <h3>Projects</h3>
+    <div class="card">AI Chatbot for Support</div>
+    <div class="card">Workflow Automation for SMEs</div>
+    <div class="card">Custom AI Prompts for Business</div>
   </section>
 
-  <section id="services">
-    <h2>Services</h2>
-    <div class="card">
-      <ul>
-        <li>Prompt Engineering & Optimization</li>
-        <li>Custom GPT Assistant Creation</li>
-        <li>AI Automation Workflows</li>
-        <li>Chatbot Integration</li>
-        <li>Training & Support</li>
-      </ul>
-    </div>
-  </section>
+  <!-- Scroll to top -->
+  <button id="scrollTopBtn">Top</button>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:muchemimwaniki@gmail.com">muchemimwaniki@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/254773053465">+254 773 053 465</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Muchemi Mwaniki. All rights reserved.</p>
-  </footer>
-
-  <!-- Chat Bubble -->
-  <div id="chat-bubble" onclick="toggleChat()">💬</div>
-
-  <div id="chat-window">
-    <header>
-      <strong>Ask Me Anything</strong>
-      <span style="cursor:pointer" onclick="toggleChat()">✖</span>
-    </header>
-    <div id="chat-body">
-      <p>Hello! How can I assist you today?</p>
-    </div>
-    <input type="text" id="chat-input" placeholder="Type your message..." />
-  </div>
-
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/254773053465" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    🟢
+  <!-- WhatsApp Icon -->
+  <a id="whatsapp-icon" href="https://wa.me/254773053465" target="_blank">
+    <img src="images/whatsapp.png" alt="WhatsApp" width="50" height="50" />
   </a>
 
-  <!-- Scroll Top Button -->
-  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+  <!-- Chatbot -->
+  <div id="chat-bubble">💬</div>
+  <div id="chat-window">
+    <div class="chat-header">
+      <span>Ask Me Anything</span>
+      <button class="chat-close">X</button>
+    </div>
+    <div id="chat-body"></div>
+    <input type="text" id="chat-input" placeholder="Type a message..." />
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
