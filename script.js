@@ -124,3 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.classList.add(savedTheme === 'dark' ? 'dark-theme' : 'light-theme');
 });
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+});
