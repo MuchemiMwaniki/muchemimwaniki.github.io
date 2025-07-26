@@ -6,9 +6,12 @@
   <meta name="description" content="Muchemi Mwaniki - AI Prompt Engineering & Smart Automation for Businesses" />
   <title>Muchemi Mwaniki - AI Solutions</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
+  <!-- Light/Dark Toggle -->
+  <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+
   <!-- HERO SECTION -->
   <header class="hero">
     <div class="overlay">
@@ -28,18 +31,13 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="theme-toggle">🌙</button>
   </nav>
 
   <!-- MAIN CONTENT -->
   <main class="container">
     <section id="about" class="card">
       <h2>About Me</h2>
-      <p>
-        I’m Muchemi Mwaniki, a tech enthusiast and AI solutions consultant based in Kenya.
-        I help businesses and individuals harness <strong>AI, prompt engineering, and automation</strong>
-        to save time, reduce costs, and unlock growth opportunities.
-      </p>
+      <p>I’m Muchemi Mwaniki, a tech enthusiast and AI solutions consultant based in Kenya. I help businesses and individuals harness <strong>AI, prompt engineering, and automation</strong> to save time, reduce costs, and unlock growth opportunities.</p>
     </section>
 
     <section id="services" class="card">
@@ -66,13 +64,11 @@
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/254773053465" class="whatsapp-float" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+    <img src="whatsapp-icon.png" alt="WhatsApp Icon" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg';" />
   </a>
 
-  <!-- Chatbot Bubble -->
+  <!-- Chatbot -->
   <div class="chat-bubble" id="chat-bubble">💬</div>
-
-  <!-- Chatbot Window -->
   <div class="chat-window" id="chat-window">
     <div class="chat-header">
       Chat with AI
@@ -85,15 +81,6 @@
   <!-- Scroll-to-Top Button -->
   <button id="scrollTopBtn">&#8679;</button>
 
-  <!-- SCRIPT -->
-  <script>
-    // Light/Dark Theme Toggle
-    const toggleBtn = document.getElementById("theme-toggle");
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-      toggleBtn.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
-    });
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
