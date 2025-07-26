@@ -3,84 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Muchemi Mwaniki - AI Prompt Engineering & Smart Automation for Businesses" />
-  <title>Muchemi Mwaniki - AI Solutions</title>
+  <title>Muchemi Mwaniki | Prompt Engineering & AI Specialist</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Light/Dark Toggle -->
-  <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="overlay">
-      <div class="hero-content">
-        <h1><span class="typing-text" data-text='["Muchemi Mwaniki", "AI Solutions Expert", "Prompt Engineering Specialist"]'></span></h1>
-        <p>AI Prompt Engineering & Smart Automation for Businesses</p>
-        <a href="#contact" class="cta-button">Contact Me</a>
-      </div>
+  <nav>
+    <div class="logo"><a href="#">Muchemi Mwaniki</a></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle">Toggle Theme</button>
     </div>
-  </header>
-
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
   </nav>
 
-  <!-- MAIN CONTENT -->
-  <main class="container">
-    <section id="about" class="card">
-      <h2>About Me</h2>
-      <p>I’m Muchemi Mwaniki, a tech enthusiast and AI solutions consultant based in Kenya. I help businesses and individuals harness <strong>AI, prompt engineering, and automation</strong> to save time, reduce costs, and unlock growth opportunities.</p>
-    </section>
+  <section class="hero">
+    <h1>Prompt Engineering & AI Solutions</h1>
+    <p>Transforming Ideas into Smart Automations</p>
+  </section>
 
-    <section id="services" class="card">
-      <h2>Services</h2>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I’m Muchemi Mwaniki, a specialist in prompt engineering and AI-driven automation. I help businesses harness the power of AI to boost efficiency, creativity, and results.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="card">
+      <h3>ChatGPT Bot Builder</h3>
+      <p>Created a no-code solution for generating ChatGPT-based assistants using structured prompts.</p>
+    </div>
+    <div class="card">
+      <h3>AI Automation for SMEs</h3>
+      <p>Helped local businesses automate accounting and customer support using custom GPT workflows.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <div class="card">
       <ul>
-        <li><strong>Prompt Engineering & AI Consulting:</strong> Crafting high-quality prompts for better AI results.</li>
-        <li><strong>Workflow Automation:</strong> Automating business processes with Zapier, n8n, and AI integrations.</li>
-        <li><strong>Custom Chatbots:</strong> Smart AI assistants for websites and businesses.</li>
-        <li><strong>AI-Powered Websites:</strong> Modern, SEO-friendly websites with AI features built-in.</li>
+        <li>Prompt Engineering & Optimization</li>
+        <li>Custom GPT Assistant Creation</li>
+        <li>AI Automation Workflows</li>
+        <li>Chatbot Integration</li>
+        <li>Training & Support</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects" class="card">
-      <h2>Projects</h2>
-      <p>Coming soon: Case studies of businesses I’ve transformed with AI.</p>
-    </section>
-  </main>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:muchemimwaniki@gmail.com">muchemimwaniki@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/254773053465">+254 773 053 465</a></p>
+    </div>
+  </section>
 
-  <!-- FOOTER -->
-  <footer id="contact">
-    <p>Contact me via WhatsApp: <a href="https://wa.me/254773053465" target="_blank">+254 773 053 465</a></p>
-    <p>Email: <a href="mailto:muchemimwaniki@gmail.com">muchemimwaniki@gmail.com</a></p>
+  <footer>
+    <p>&copy; 2025 Muchemi Mwaniki. All rights reserved.</p>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/254773053465" class="whatsapp-float" target="_blank">
-    <img src="whatsapp-icon.png" alt="WhatsApp Icon" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg';" />
-  </a>
+  <!-- Chat Bubble -->
+  <div id="chat-bubble" onclick="toggleChat()">💬</div>
 
-  <!-- Chatbot -->
-  <div class="chat-bubble" id="chat-bubble">💬</div>
-  <div class="chat-window" id="chat-window">
-    <div class="chat-header">
-      Chat with AI
-      <button class="chat-close">&times;</button>
+  <div id="chat-window">
+    <header>
+      <strong>Ask Me Anything</strong>
+      <span style="cursor:pointer" onclick="toggleChat()">✖</span>
+    </header>
+    <div id="chat-body">
+      <p>Hello! How can I assist you today?</p>
     </div>
-    <div class="chat-body" id="chat-body"></div>
     <input type="text" id="chat-input" placeholder="Type your message..." />
   </div>
 
-  <!-- Scroll-to-Top Button -->
-  <button id="scrollTopBtn">&#8679;</button>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/254773053465" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    🟢
+  </a>
 
-  <script src="script.js"></script>
+  <!-- Scroll Top Button -->
+  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 </body>
 </html>
